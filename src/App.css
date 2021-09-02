@@ -1,0 +1,14 @@
+#newsimage {
+	height: 250px;
+}
+#extra {
+	font-size: 0.7rem;
+}
+.newstitle {
+	text-decoration: none;
+	color: black;
+}
+.newstitle:hover {
+	color: black;
+	text-decoration: underline;
+}
