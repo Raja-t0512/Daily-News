@@ -1,5 +1,5 @@
 import React from 'react'
-import image from './news.jfif'
+import image from './Images/news.jfif'
 
 const NewsItem = (props) => {
     return (
