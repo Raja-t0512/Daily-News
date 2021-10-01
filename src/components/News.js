@@ -20,9 +20,10 @@ const News = (props) => {
         setTotalResults(parsedData.totalResults);
         setLoading(false);
         props.setProgress(100);
-    }/* eslint-disable react-hooks/exhaustive-deps */
+    }
     useEffect(() => {
         updateNews();
+        /* eslint-disable react-hooks/exhaustive-deps */
     }, [])
 
     let fetchMoreData = async () => {

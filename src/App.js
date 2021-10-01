@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import NavBar from './components/NavBar'
 import News from './components/News'
 import LoadingBar from 'react-top-loading-bar'
@@ -19,9 +19,9 @@ const App = () => {
       setMode('dark');
       document.body.style.backgroundColor = '#111111';
     }
-    else if (mode === 'dark') {
+    else {
       setMode('light');
-      document.body.style.backgroundColor = 'white';
+      document.body.style.backgroundColor = 'whitesmoke';
     }
   }
   //Variables
@@ -30,6 +30,10 @@ const App = () => {
   //GO to newsapi.org create an account and replace your api key below
   // apiKey = "your api key";
 
+  useEffect(() => {
+
+    document.body.style.backgroundColor = 'whitesmoke';
+  }, [])
   return (
     <>
       <Router>
