@@ -25,9 +25,6 @@ const NavBar = (props) => {
                                 <Link className={`nav-link ${location.pathname === "/entertainment" ? "active" : ""}`} to="/entertainment">Entertainment</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={`nav-link ${location.pathname === "/general" ? "active" : ""}`} to="/general">General</Link>
-                            </li>
-                            <li className="nav-item">
                                 <Link className={`nav-link ${location.pathname === "/health" ? "active" : ""}`} to="/health">Health</Link>
                             </li>
                             <li className="nav-item">
@@ -39,11 +36,13 @@ const NavBar = (props) => {
                             <li className="nav-item">
                                 <Link className={`nav-link ${location.pathname === "/technology" ? "active" : ""}`} to="/technology">Technology</Link>
                             </li>
+                            <li className='my-2 nav-item'>
+                                <div className="form-check form-switch">
+                                    <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={props.togglemode} />
+                                    <label className={`form-check-label ${props.mode === 'dark' ? 'text-light' : ""}`} htmlFor="flexSwitchCheckDefault">Dark Mode</label>
+                                </div>
+                            </li>
                         </ul>
-                    </div>
-                    <div className="form-check form-switch">
-                        <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={props.togglemode} />
-                        <label className={`form-check-label ${props.mode === 'dark' ? 'text-light' : ""}`} htmlFor="flexSwitchCheckDefault">Dark Mode</label>
                     </div>
                 </div>
             </nav>

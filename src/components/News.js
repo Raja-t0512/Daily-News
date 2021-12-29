@@ -48,7 +48,7 @@ const News = (props) => {
                 loader={<Spinner />}
             >
                 <div className="container my-5 ">
-                    <h1 className={`text-center ${props.mode === 'dark' ? 'text-light' : ''}`} style={{ marginTop: "60px", fontSize: "4rem" }}>Daily News - Top {capitalize(props.category)} News</h1>
+                    <h1 className={`text-center main-heading ${props.mode === 'dark' ? 'text-light' : ''}`}>Daily News - Top {capitalize(props.category)} News</h1>
                     {loading && <Spinner />}
                     <div className="row">
                         {articles.map((element) => {

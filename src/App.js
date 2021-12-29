@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react'
 import NavBar from './components/NavBar'
 import News from './components/News'
 import LoadingBar from 'react-top-loading-bar'
+import ErrorPage from './components/ErrorPage';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 import './App.css'
-
 const App = () => {
-
   const [mode, setMode] = useState('light')
   const [progress, setProgress] = useState(0)
 
@@ -31,7 +30,6 @@ const App = () => {
   // apiKey = "your api key";
 
   useEffect(() => {
-
     document.body.style.backgroundColor = 'whitesmoke';
   }, [])
   return (
@@ -54,9 +52,6 @@ const App = () => {
           <Route exact path="/entertainment">
             <News setProgress={setProgress} key="entertainment" mode={mode} pageSize={pageSize} apiKey={apiKey} category='entertainment' />
           </Route>
-          <Route exact path="/general">
-            <News setProgress={setProgress} key="general" mode={mode} pageSize={pageSize} apiKey={apiKey} category='general' />
-          </Route>
           <Route exact path="/health">
             <News setProgress={setProgress} key="health" mode={mode} pageSize={pageSize} apiKey={apiKey} category='health' />
           </Route>
@@ -68,6 +63,9 @@ const App = () => {
           </Route>
           <Route exact path="/technology">
             <News setProgress={setProgress} key="technology" mode={mode} pageSize={pageSize} apiKey={apiKey} category='technology' />
+          </Route>
+          <Route path="*">
+            <ErrorPage />
           </Route>
         </Switch>
       </Router>
